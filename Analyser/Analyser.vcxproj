@@ -81,6 +81,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <FullProgramDatabaseFile>true</FullProgramDatabaseFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -119,25 +120,31 @@
   <ItemGroup>
     <ClCompile Include="Analyser.cpp" />
     <ClCompile Include="Calculator.cpp" />
+    <ClCompile Include="FileReader.cpp" />
     <ClCompile Include="FileType.cpp" />
     <ClCompile Include="FormulaCPP.cpp" />
     <ClCompile Include="FormulaHeader.cpp" />
     <ClCompile Include="FormulaSelector.cpp" />
     <ClCompile Include="Life.cpp" />
+    <ClCompile Include="Param.cpp" />
     <ClCompile Include="TableFactory.cpp" />
     <ClCompile Include="TblSQLite.cpp" />
+    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Calculator.hpp" />
+    <ClInclude Include="FileReader.hpp" />
     <ClInclude Include="FileType.hpp" />
     <ClInclude Include="FormulaBase.hpp" />
     <ClInclude Include="FormulaCPP.hpp" />
     <ClInclude Include="FormulaHeader.hpp" />
     <ClInclude Include="FormulaSelector.hpp" />
     <ClInclude Include="Life.hpp" />
+    <ClInclude Include="Param.hpp" />
     <ClInclude Include="TableFactory.hpp" />
     <ClInclude Include="TblBase.hpp" />
     <ClInclude Include="TblSQLite.hpp" />
+    <ClInclude Include="Timer.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -10,8 +10,8 @@
 class TblSQLite : public TblBase
 {
 public:
-     TblSQLite(std::string a_DBPath, std::string a_TableName):TblBase(a_TableName), m_DBPath(a_DBPath){}
-     ~TblSQLite() {}
+    TblSQLite(std::string a_DBPath, std::string a_TableName);
+    ~TblSQLite();
 
      std::list<std::string> SearchByChild(std::string a_Child) override;
      //std::string SearchByParent(std::string a_Parent) override;
@@ -28,7 +28,7 @@ private:
     static std::list<std::string> m_ValueList;
     static sqlite3* m_pDB;
 
-    std::map<std::string, std::list<std::string>> m_Cache;
+    std::map<std::string, std::list<std::string>>* m_pCache;
 };
 
 #endif // !TBL_SQLITE_HPP

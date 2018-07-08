@@ -9,10 +9,24 @@ int TblSQLite::Callback(void* a_pData, int a_Argc, char** a_pArgv, char** a_pCol
 sqlite3* TblSQLite::m_pDB = NULL;
 std::list<std::string> TblSQLite::m_ValueList = {};
 
+TblSQLite::TblSQLite(std::string a_DBPath, std::string a_TableName) :TblBase(a_TableName), m_DBPath(a_DBPath)
+{
+    m_pCache = new std::map<std::string, std::list<std::string>>();
+}
+
+TblSQLite::~TblSQLite()
+{
+    if (NULL != m_pCache)
+    {
+        delete m_pCache;
+        m_pCache = NULL;
+    }
+}
+
 std::list<std::string> TblSQLite::SearchByChild(std::string a_Child)
 {
-    std::map<std::string, std::list<std::string>>::iterator l_It = m_Cache.find(a_Child);
-    if (m_Cache.end() != l_It)
+    std::map<std::string, std::list<std::string>>::iterator l_It = m_pCache->find(a_Child);
+    if (m_pCache->end() != l_It)
     {
         return l_It->second;
     }
@@ -21,7 +35,7 @@ std::list<std::string> TblSQLite::SearchByChild(std::string a_Child)
 
     if (0 == SQLExec(l_SQL.c_str()) && !m_ValueList.empty())
     {
-        m_Cache[a_Child] = m_ValueList;
+        (*m_pCache)[a_Child] = m_ValueList;
     }
 
     return m_ValueList;
