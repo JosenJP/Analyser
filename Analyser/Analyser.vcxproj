@@ -69,13 +69,19 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(MSBuildProjectDirectory)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(MSBuildProjectDirectory)\3rdParty\Lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -111,6 +117,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Analyser.cpp" />
+    <ClCompile Include="Calculator.cpp" />
+    <ClCompile Include="FileType.cpp" />
+    <ClCompile Include="FormulaCPP.cpp" />
+    <ClCompile Include="FormulaHeader.cpp" />
+    <ClCompile Include="FormulaSelector.cpp" />
+    <ClCompile Include="Life.cpp" />
+    <ClCompile Include="TableFactory.cpp" />
+    <ClCompile Include="TblSQLite.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Calculator.hpp" />
+    <ClInclude Include="FileType.hpp" />
+    <ClInclude Include="FormulaBase.hpp" />
+    <ClInclude Include="FormulaCPP.hpp" />
+    <ClInclude Include="FormulaHeader.hpp" />
+    <ClInclude Include="FormulaSelector.hpp" />
+    <ClInclude Include="Life.hpp" />
+    <ClInclude Include="TableFactory.hpp" />
+    <ClInclude Include="TblBase.hpp" />
+    <ClInclude Include="TblSQLite.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
