@@ -30,7 +30,6 @@ int main(int a_Argc, char** a_pArgv)
     }
 
     std::unique_ptr<Calculator> l_pCalculator = std::unique_ptr<Calculator>(new Calculator());
-    //Calculator* l_pCalculator = new Calculator();
 
     //Set SQLite Database
     std::string l_DBPath = l_Param.GetValue(s_pKeyDatabase);
@@ -42,7 +41,7 @@ int main(int a_Argc, char** a_pArgv)
     l_FileReader.Read(l_File, l_TargetFiles);
 
     l_Timer.Start();
-    std::set<std::string> l_ProjList = l_pCalculator->Process(l_TargetFiles);
+    std::list<std::string> l_ProjList = l_pCalculator->Process(l_TargetFiles);
     l_Timer.End();
     l_Timer.Duration();
 
@@ -50,11 +49,6 @@ int main(int a_Argc, char** a_pArgv)
     {
         std::cout << l_Proj << std::endl;
     }
-
-    ////Memory Testing
-    //delete l_pCalculator;
-    //l_ProjList.clear();
-    //TblSQLite::FreeDB();
 
     return 0;
 }

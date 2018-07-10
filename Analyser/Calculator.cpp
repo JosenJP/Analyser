@@ -17,7 +17,7 @@ std::set<std::string>& Calculator::ProcessOne(std::string a_File)
     return m_ProjListForOne;
 }
 
-std::set<std::string>& Calculator::Process(std::list<std::string> a_FileList)
+std::list<std::string>& Calculator::Process(std::list<std::string> a_FileList)
 {
     m_ProjList.clear();
     for (std::string l_File : a_FileList)
@@ -26,5 +26,12 @@ std::set<std::string>& Calculator::Process(std::list<std::string> a_FileList)
         m_ProjList.insert(m_ProjListForOne.begin(), m_ProjListForOne.end());
     }
 
-    return m_ProjList;
+    m_SortedProjList.insert(m_SortedProjList.begin(), m_ProjList.begin(), m_ProjList.end());
+    if (!m_pLibChecker)
+    {
+        m_pLibChecker = std::unique_ptr<LibChecker>(new LibChecker());
+    }
+    m_pLibChecker->Process(m_SortedProjList);
+
+    return m_SortedProjList;
 }

@@ -125,6 +125,7 @@
     <ClCompile Include="FormulaCPP.cpp" />
     <ClCompile Include="FormulaHeader.cpp" />
     <ClCompile Include="FormulaSelector.cpp" />
+    <ClCompile Include="LibChecker.cpp" />
     <ClCompile Include="Life.cpp" />
     <ClCompile Include="Param.cpp" />
     <ClCompile Include="TableFactory.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="FormulaCPP.hpp" />
     <ClInclude Include="FormulaHeader.hpp" />
     <ClInclude Include="FormulaSelector.hpp" />
+    <ClInclude Include="LibChecker.hpp" />
     <ClInclude Include="Life.hpp" />
     <ClInclude Include="Param.hpp" />
     <ClInclude Include="TableFactory.hpp" />

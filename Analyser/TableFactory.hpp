@@ -9,7 +9,9 @@ enum TableID
     TBlID_UnKnow  = 0,
     TBLID_Header  = 1,
     TBLID_CPP     = 2,
-    TBLID_Proj    = 3
+    TBLID_Proj    = 3,
+    TBLID_Lib     = 4,
+    TBLID_Lib_Name = 5
 };
 
 class TblBase;
