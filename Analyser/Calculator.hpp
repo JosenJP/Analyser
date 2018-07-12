@@ -7,6 +7,7 @@
 
 #include "FileType.hpp"
 #include "LibChecker.hpp"
+#include "BuildSort.hpp"
 
 class TblBase;
 
@@ -22,6 +23,7 @@ private:
     std::set<std::string> m_ProjList;
     std::list<std::string> m_SortedProjList;
     std::unique_ptr<LibChecker> m_pLibChecker;
+    std::unique_ptr<BuildSort> m_pBuildSort;
 };
 
 #endif // !CALCULATOR_HPP

@@ -18,6 +18,9 @@ public:
 
      static void FreeDB(void);
 
+protected:
+     std::string GetSQLForSearchByChild(std::string a_Child) override;
+
 private:
     int SQLExec(const char* a_pSQL);
     int OpenDB(void);

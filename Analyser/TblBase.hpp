@@ -11,9 +11,11 @@ public:
     virtual ~TblBase() {}
 
     virtual std::list<std::string> SearchByChild(std::string a_Child) = 0;
-    //virtual std::string SearchByParent(std::string a_Parent) = 0;
 
 protected:
+    virtual std::string GetSQLForSearchByChild(std::string a_Child) = 0;
+    //virtual std::string SearchByParent(std::string a_Parent) = 0;
+
     std::string m_TblName;
 };
 

@@ -1,5 +1,6 @@
 #include "TableFactory.hpp"
 #include "TblSQLite.hpp"
+#include "TblBuildOrder.hpp"
 
 const char* TBL_PROJECT     = "Project";
 const char* TBL_CPP         = "CPP";
@@ -16,6 +17,7 @@ TblBase* TableFactory::GetTable(TableID a_TableID)
     static TblSQLite s_TblProj(s_DBPath, TBL_PROJECT);
     static TblSQLite s_TblLib(s_DBPath, TBL_LIB);
     static TblSQLite s_TblLibName(s_DBPath, TBL_LIB_NAME);
+    static TblBuildOrder s_TblBuildOrder(s_DBPath);
 
     TblBase* l_pTbl = NULL;
     switch (a_TableID)
@@ -43,6 +45,11 @@ TblBase* TableFactory::GetTable(TableID a_TableID)
     case TableID::TBLID_Lib_Name:
     {
         l_pTbl = &s_TblLibName;
+        break;
+    }
+    case TableID::TBLID_Build_Order:
+    {
+        l_pTbl = &s_TblBuildOrder;
         break;
     }
     default:

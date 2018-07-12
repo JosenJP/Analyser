@@ -31,7 +31,7 @@ std::list<std::string> TblSQLite::SearchByChild(std::string a_Child)
         return l_It->second;
     }
 
-    std::string l_SQL = "select Parent from " + m_TblName + " where Child = \'" + a_Child + "\'";
+    std::string l_SQL = GetSQLForSearchByChild(a_Child);
 
     if (0 == SQLExec(l_SQL.c_str()) && !m_ValueList.empty())
     {
@@ -41,6 +41,10 @@ std::list<std::string> TblSQLite::SearchByChild(std::string a_Child)
     return m_ValueList;
 }
 
+std::string TblSQLite::GetSQLForSearchByChild(std::string a_Child)
+{
+    return "select Parent from " + m_TblName + " where Child = \'" + a_Child + "\'";
+}
 
 int TblSQLite::SQLExec(const char* a_pSQL)
 {

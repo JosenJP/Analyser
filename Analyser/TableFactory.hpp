@@ -11,7 +11,8 @@ enum TableID
     TBLID_CPP     = 2,
     TBLID_Proj    = 3,
     TBLID_Lib     = 4,
-    TBLID_Lib_Name = 5
+    TBLID_Lib_Name = 5,
+    TBLID_Build_Order =6
 };
 
 class TblBase;

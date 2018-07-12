@@ -27,11 +27,20 @@ std::list<std::string>& Calculator::Process(std::list<std::string> a_FileList)
     }
 
     m_SortedProjList.insert(m_SortedProjList.begin(), m_ProjList.begin(), m_ProjList.end());
+
+    //Find all the project contain one of the libs.
     if (!m_pLibChecker)
     {
         m_pLibChecker = std::unique_ptr<LibChecker>(new LibChecker());
     }
     m_pLibChecker->Process(m_SortedProjList);
+
+    //Sort the list base on Build Order.
+    if (!m_pBuildSort)
+    {
+        m_pBuildSort = std::unique_ptr<BuildSort>(new BuildSort());
+    }
+    m_pBuildSort->Sort(m_SortedProjList);
 
     return m_SortedProjList;
 }
