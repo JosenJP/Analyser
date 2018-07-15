@@ -19,6 +19,9 @@
     <Filter Include="TableWrapper">
       <UniqueIdentifier>{d569a41c-b173-4bd9-804d-6bee56217f27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FileHelper">
+      <UniqueIdentifier>{74332827-b477-4d82-8768-e612d66a2118}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Analyser.cpp">
@@ -30,16 +33,10 @@
     <ClCompile Include="Calculator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FileType.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Param.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FileReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FormulaCPP.cpp">
@@ -65,6 +62,15 @@
     </ClCompile>
     <ClCompile Include="TblBuildOrder.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileReader.cpp">
+      <Filter>FileHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="FileType.cpp">
+      <Filter>FileHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="FileWriter.cpp">
+      <Filter>FileHelper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +120,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TblBuildOrder.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileWriter.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

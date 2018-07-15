@@ -8,12 +8,13 @@
 #include "Param.hpp"
 #include "FileReader.hpp"
 #include "TblSQLite.hpp"
+#include "FileWriter.hpp"
 
 void PrintUsage(void)
 {
-    std::cout << "Usage: Analyser.exe -D<DBFilePath> -F<SourceCodeFileList>"    << std::endl
+    std::cout << "Usage: Analyser.exe -D<DBFilePath> -F<SourceCodeFileList> -O<OutputFile>"    << std::endl
         << "Currently, the tool supports SQLite Database."                      << std::endl
-        << "Example: Analyser.exe -DD:\\SQLite.db -FD:\\ChangedFileList.txt"    << std::endl;
+        << "Example: Analyser.exe -DD:\\SQLite.db -FD:\\ChangedFileList.txt -OD:\\OutputFile.txt"    << std::endl;
 }
 
 int main(int a_Argc, char** a_pArgv)
@@ -44,6 +45,14 @@ int main(int a_Argc, char** a_pArgv)
     std::list<std::string> l_ProjList = l_pCalculator->Process(l_TargetFiles);
     l_Timer.End();
     l_Timer.Duration();
+
+    std::string l_OutputFile = l_Param.GetValue(s_pKeyOutputFile);
+    //Wirte to Output file
+    if (!l_ProjList.empty() && !l_OutputFile.empty())
+    {
+        FileWriter l_FileWriter;
+        l_FileWriter.WriteList(l_OutputFile, l_ProjList);
+    }
 
     for (std::string l_Proj : l_ProjList)
     {

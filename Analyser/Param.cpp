@@ -2,7 +2,7 @@
 #include <algorithm>
 
 const int HEADER_LEN = 2;
-
+const int REQUIRE_ARGUEMENT_NUM = 2;
 
 Param::Param()
 {
@@ -14,7 +14,9 @@ Param::~Param()
 
 bool Param::LoadParam(int a_Argc, char** a_pArgv)
 {
-    if (a_Argc < 3)
+    bool l_IsValid = true;
+
+    if (a_Argc < REQUIRE_ARGUEMENT_NUM + 1)
     {
         return false;
     }
@@ -36,19 +38,37 @@ bool Param::LoadParam(int a_Argc, char** a_pArgv)
         {
             m_Values[s_pKeyChangedFile] = l_Value;
         }
+        else if (l_Header.compare(s_pKeyOutputFile) == 0) //Output file list
+        {
+            m_Values[s_pKeyOutputFile] = l_Value;
+        }
         else
         {
-            return false;
+            l_IsValid = false;
         }
     }
 
-    if (m_Values.size() < 2)
+    if (!HasAllRequiredArgs())
     {
-        return false;
+        l_IsValid = false;
     }
 
-    return true;
+    return l_IsValid;
 }
+
+bool Param::HasAllRequiredArgs()
+{
+    bool l_HasAllRequiredArgs = false;
+
+    if ((m_Values.end() != m_Values.find(s_pKeyDatabase)) &&
+        (m_Values.end() != m_Values.find(s_pKeyChangedFile)))
+    {
+        l_HasAllRequiredArgs = true;
+    }
+
+    return l_HasAllRequiredArgs;
+}
+
 
 std::string Param::GetValue(const char* a_Arg)
 {
