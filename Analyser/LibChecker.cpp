@@ -12,6 +12,7 @@ void LibChecker::Process(std::list<std::string>& a_rProjList)
 
     std::set<std::string> l_ProjLib = {};
     std::set<std::string> l_ProjNonLib = {};
+    std::set<std::string> l_Libs = {};
 
     std::set<std::string> l_TempProjLib = {};
     std::set<std::string> l_TempProjNonLib = {};
@@ -23,12 +24,12 @@ void LibChecker::Process(std::list<std::string>& a_rProjList)
     CheckProjType(a_rProjList,
                   l_TempProjLib,
                   l_TempProjNonLib,
-                  l_TempLibs);
+                  l_Libs);
 
     l_ProjNonLib.insert(l_TempProjNonLib.begin(), l_TempProjNonLib.end());
     l_ProjLib.insert(l_TempProjLib.begin(), l_TempProjLib.end());
 
-    for (std::string l_Lib : l_TempLibs)
+    for (std::string l_Lib : l_Libs)
     {
         //Process One Lib
         l_AllLib.clear();

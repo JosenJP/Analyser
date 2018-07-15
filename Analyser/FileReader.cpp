@@ -1,4 +1,5 @@
 #include <fstream>
+#include <algorithm>
 #include "FileReader.hpp"
 
 static const int MAX_FILE_NAME_LEN = 500;
@@ -21,7 +22,10 @@ void FileReader::Read(std::string a_File, std::list<std::string>& a_rFileList)
     {
         l_File.getline(l_FileName, sizeof(l_FileName));
 
-        a_rFileList.push_back(l_FileName);
+        std::string l_LowerFileName(l_FileName) ;
+        std::transform(l_LowerFileName.begin(), l_LowerFileName.end(), l_LowerFileName.begin(), ::tolower);
+
+        a_rFileList.push_back(l_LowerFileName);
     }
 
 }
