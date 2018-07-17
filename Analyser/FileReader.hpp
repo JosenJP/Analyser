@@ -8,6 +8,9 @@ class FileReader
 {
 public:
      void Read(std::string a_File, std::list<std::string>& a_rFileList);
+
+private:
+    std::string GetFileName(std::string a_File);
 };
 
 #endif // !FILE_READER_HPP

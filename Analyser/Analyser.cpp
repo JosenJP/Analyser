@@ -48,7 +48,7 @@ int main(int a_Argc, char** a_pArgv)
 
     std::string l_OutputFile = l_Param.GetValue(s_pKeyOutputFile);
     //Wirte to Output file
-    if (!l_ProjList.empty() && !l_OutputFile.empty())
+    if (!l_OutputFile.empty())
     {
         FileWriter l_FileWriter;
         l_FileWriter.WriteList(l_OutputFile, l_ProjList);

@@ -29,7 +29,7 @@ void BuildSort::Sort(std::list<std::string>& a_rSortedList)
     }
 
     //Sort the list based on its order.The smaller order number is, the higher priority the projs is in.
-    l_SortedList.sort([](const BuildElement& a_rElement1, const BuildElement& a_rElement2) { return a_rElement1.second > a_rElement2.second; });
+    l_SortedList.sort([](const BuildElement& a_rElement1, const BuildElement& a_rElement2) { return a_rElement1.second < a_rElement2.second; });
 
     //Get the sorted project list.
     if (l_SortedList.size() > 0)
