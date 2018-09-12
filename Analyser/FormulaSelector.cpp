@@ -17,6 +17,8 @@ FormulaBase* FormulaSelector::GetFormula(FileType a_FileType)
         break;
     }
     case FileType::CPP:
+        //Fall Through
+    case FileType::UnKnow:
     {
         l_pFormula = &s_FormulaCPP;
         break;
