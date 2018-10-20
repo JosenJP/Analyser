@@ -21,6 +21,11 @@ FileType FileChecker::Check(const char* a_File)
     {
         l_FileType = FileType::Header;
     }
+    else
+    {
+        //The other files shuold be similar to the relationship between CPP and project.
+        l_FileType = FileType::CPP;
+    }
 
     return l_FileType;
 }
