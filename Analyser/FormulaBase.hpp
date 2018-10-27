@@ -6,7 +6,10 @@
 class FormulaBase
 {
 public:
-    virtual void Calc(std::string a_FileName, std::set<std::string>& a_rList) {}
+    FormulaBase() {};
+    virtual ~FormulaBase() {};
+
+    virtual void Calc(std::string a_FileName, std::set<std::string>& a_rList) = 0;
 
 };
 

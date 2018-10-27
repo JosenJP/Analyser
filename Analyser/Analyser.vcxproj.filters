@@ -22,6 +22,9 @@
     <Filter Include="FileHelper">
       <UniqueIdentifier>{74332827-b477-4d82-8768-e612d66a2118}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Searcher">
+      <UniqueIdentifier>{7eddaac5-e312-45ac-9dc4-7bcadc461c30}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Analyser.cpp">
@@ -71,6 +74,18 @@
     </ClCompile>
     <ClCompile Include="FileWriter.cpp">
       <Filter>FileHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectlySearcher.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="RecursiveSearcher.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="SearcherFactory.cpp">
+      <Filter>Searcher</Filter>
+    </ClCompile>
+    <ClCompile Include="FormulaRC.cpp">
+      <Filter>Formulas</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +138,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FileWriter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PointerHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseSearcher.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectlySearcher.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RecursiveSearcher.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SearcherFactory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormulaRC.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

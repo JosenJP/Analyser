@@ -6,10 +6,12 @@ const char* EXTENSION_CPP = ".cpp";
 const char* EXTENSION_C = ".c";
 const char* EXTENSION_H = ".h";
 const char* EXTENSION_HPP = ".hpp";
+const char* EXTENSION_Hr = ".hr";
+const char* EXTENSION_RC = ".rc";
 
 FileType FileChecker::Check(const char* a_File)
 {
-    FileType l_FileType = FileType::UnKnow;
+    FileType l_FileType = FileType::UnKnown;
 
     if (CheckExtension(a_File, EXTENSION_CPP) ||
         CheckExtension(a_File, EXTENSION_C))
@@ -17,9 +19,14 @@ FileType FileChecker::Check(const char* a_File)
         l_FileType = FileType::CPP;
     }
     else if (CheckExtension(a_File, EXTENSION_H) ||
-             CheckExtension(a_File, EXTENSION_HPP))
+             CheckExtension(a_File, EXTENSION_HPP) ||
+             CheckExtension(a_File, EXTENSION_Hr))
     {
         l_FileType = FileType::Header;
+    }
+    else if (CheckExtension(a_File, EXTENSION_RC))
+    {
+        l_FileType = FileType::Rc;
     }
     else
     {

@@ -4,10 +4,17 @@
 
 enum FileType
 {
-    UnKnow  = 0,
+    UnKnown = 0,
     Header  = 1,
-    CPP     = 2
+    CPP     = 2,
+    Rc      = 3
 };
+
+extern const char* EXTENSION_CPP;
+extern const char* EXTENSION_C;
+extern const char* EXTENSION_H;
+extern const char* EXTENSION_HPP;
+extern const char* EXTENSION_RC;
 
 class FileChecker
 {

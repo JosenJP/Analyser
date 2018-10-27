@@ -119,6 +119,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Analyser.cpp" />
+    <ClCompile Include="DirectlySearcher.cpp" />
     <ClCompile Include="BuildSort.cpp" />
     <ClCompile Include="Calculator.cpp" />
     <ClCompile Include="FileReader.cpp" />
@@ -126,28 +127,37 @@
     <ClCompile Include="FileWriter.cpp" />
     <ClCompile Include="FormulaCPP.cpp" />
     <ClCompile Include="FormulaHeader.cpp" />
+    <ClCompile Include="FormulaRC.cpp" />
     <ClCompile Include="FormulaSelector.cpp" />
     <ClCompile Include="LibChecker.cpp" />
     <ClCompile Include="Life.cpp" />
     <ClCompile Include="Param.cpp" />
+    <ClCompile Include="RecursiveSearcher.cpp" />
+    <ClCompile Include="SearcherFactory.cpp" />
     <ClCompile Include="TableFactory.cpp" />
     <ClCompile Include="TblBuildOrder.cpp" />
     <ClCompile Include="TblSQLite.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseSearcher.hpp" />
     <ClInclude Include="BuildSort.hpp" />
     <ClInclude Include="Calculator.hpp" />
+    <ClInclude Include="DirectlySearcher.hpp" />
     <ClInclude Include="FileReader.hpp" />
     <ClInclude Include="FileType.hpp" />
     <ClInclude Include="FileWriter.hpp" />
     <ClInclude Include="FormulaBase.hpp" />
     <ClInclude Include="FormulaCPP.hpp" />
     <ClInclude Include="FormulaHeader.hpp" />
+    <ClInclude Include="FormulaRC.hpp" />
     <ClInclude Include="FormulaSelector.hpp" />
     <ClInclude Include="LibChecker.hpp" />
     <ClInclude Include="Life.hpp" />
     <ClInclude Include="Param.hpp" />
+    <ClInclude Include="PointerHelper.hpp" />
+    <ClInclude Include="RecursiveSearcher.hpp" />
+    <ClInclude Include="SearcherFactory.hpp" />
     <ClInclude Include="TableFactory.hpp" />
     <ClInclude Include="TblBase.hpp" />
     <ClInclude Include="TblBuildOrder.hpp" />

@@ -12,7 +12,9 @@ enum TableID
     TBLID_Proj    = 3,
     TBLID_Lib     = 4,
     TBLID_Lib_Name = 5,
-    TBLID_Build_Order =6
+    TBLID_Build_Order =6,
+    TBLID_HR_RC     = 7,
+    TBLID_RC_RC     = 8
 };
 
 class TblBase;

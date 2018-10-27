@@ -5,12 +5,13 @@
 
 std::set<std::string>& Calculator::ProcessOne(std::string a_File)
 {
-    FileType l_FileType = FileType::UnKnow;
+    FileType l_FileType = FileType::UnKnown;
     l_FileType = FileChecker::Check(a_File.c_str());
 
     FormulaBase* l_pFormula = FormulaSelector::GetFormula(l_FileType);
     if (NULL != l_pFormula)
     {
+        m_ProjListForOne.clear();
         l_pFormula->Calc(a_File, m_ProjListForOne);
     }
 
@@ -40,7 +41,7 @@ std::list<std::string>& Calculator::Process(std::list<std::string> a_FileList)
     {
         m_pBuildSort = std::unique_ptr<BuildSort>(new BuildSort());
     }
-    m_pBuildSort->Sort(m_SortedProjList);
+    //m_pBuildSort->Sort(m_SortedProjList);
 
     return m_SortedProjList;
 }
